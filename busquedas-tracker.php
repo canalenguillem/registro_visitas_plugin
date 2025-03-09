@@ -28,4 +28,4 @@ function vp_cargar_recursos() {
     wp_enqueue_style('vp-estilos', plugin_dir_url(__FILE__) . 'assets/css/estilos.css');
     wp_enqueue_script('vp-scripts', plugin_dir_url(__FILE__) . 'assets/js/script.js', array('jquery'), false, true);
 }
-add_action('admin_enqueue_scripts', 'vp_cargar_recursos');
+#add_action('admin_enqueue_scripts', 'vp_cargar_recursos');

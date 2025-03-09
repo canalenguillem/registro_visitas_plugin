@@ -1,5 +1,5 @@
 <?php
-function vp_registrar_visita() {
+function bt_registrar_visita() {
     if (current_user_can('manage_options')) return;
 
     global $wpdb;
@@ -15,9 +15,9 @@ function vp_registrar_visita() {
         ['%s', '%s', '%s', '%s', '%s']
     );
 }
-add_action('template_redirect', 'vp_registrar_visita');
+add_action('template_redirect', 'bt_registrar_visita');
 
-function vp_mostrar_visitas() {
+function bt_mostrar_visitas() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'visit_logs';
     $tab = isset($_GET['tab']) ? $_GET['tab'] : 'todas';
@@ -86,7 +86,7 @@ function vp_mostrar_visitas() {
 
     // Botón para eliminar registros antiguos
     echo "<form method='post' action='" . admin_url('admin-post.php') . "'>";
-    echo "<input type='hidden' name='action' value='vp_eliminar_registros'>";
+    echo "<input type='hidden' name='action' value='bt_eliminar_registros'>";
     echo "<input type='hidden' name='tabla' value='visit_logs'>";
     echo "<button type='submit' class='button button-secondary'>Eliminar registros de más de 10 días</button>";
     echo "</form>";

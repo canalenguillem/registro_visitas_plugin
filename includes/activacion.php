@@ -1,5 +1,5 @@
 <?php
-function vp_crear_tablas_plugin() {
+function bp_crear_tablas_plugin() {
     global $wpdb;
     $charset_collate = $wpdb->get_charset_collate();
     require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -38,7 +38,7 @@ function vp_crear_tablas_plugin() {
     }
 }
 
-function vp_eliminar_tablas_plugin() {
+function bp_eliminar_tablas_plugin() {
     global $wpdb;
     $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}search_logs, {$wpdb->prefix}click_logs, {$wpdb->prefix}visit_logs");
 }

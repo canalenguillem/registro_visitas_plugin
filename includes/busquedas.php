@@ -1,5 +1,5 @@
 <?php
-function vp_registrar_busqueda($search_term) {
+function bp_registrar_busqueda($search_term) {
     global $wpdb;
     if (!empty($search_term)) {
         $wpdb->insert(
